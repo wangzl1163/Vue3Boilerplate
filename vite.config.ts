@@ -90,7 +90,8 @@ export default defineConfig({
          dirs: ["./src/Composables"], // ./src/Composables/** 写法：如果 Composables 下存在文件夹会搜索其下的文件夹中的模块即支持文件夹嵌套
          dts: true,
          eslintrc: {
-            enabled: true // <-- this
+            enabled: true,
+            filepath: "./.eslintrc-auto-import.mjs"
          },
          imports: [
             "vue",
