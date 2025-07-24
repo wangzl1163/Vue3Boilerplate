@@ -2,12 +2,12 @@
  * @Description  : vite config
  */
 
-import eslintPlugin from "@nabla/vite-plugin-eslint";
+// import eslintPlugin from "@nabla/vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import * as path from "path";
 import AutoImportPlugin from "unplugin-auto-import/vite";
-import { defineConfig, HttpProxy, splitVendorChunkPlugin, loadEnv } from "vite";
+import { defineConfig, HttpProxy, loadEnv } from "vite";
 import checkerPlugin from "vite-plugin-checker";
 import compressionPlugin from "vite-plugin-compression";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
@@ -55,7 +55,6 @@ export default defineConfig({
    plugins: [
       vue(), // 官方插件，用于支持 Vue 的单文件组件写法即支持 .vue 格式的文件
       vueJsx(), // 官方插件，用于支持 Vue 组件中的 JSX 语法
-      splitVendorChunkPlugin(), // 官方插件，用于支持分割代码文件块
       vueSetupExtendPlugin(), // 支持 script setup 语法下把组件的 name 写在 script 标签上
       // 支持生成 js、css 文件的 gzip 压缩文件
       compressionPlugin({
@@ -69,12 +68,12 @@ export default defineConfig({
          symbolId: "icon-[dir]-[name]"
       }),
       // 支持在 Vite 中使用 ESlint
-      eslintPlugin({
-         eslintOptions: {
-            fix: true,
-            cache: false
-         }
-      }),
+      // eslintPlugin({
+      //    eslintOptions: {
+      //       fix: true,
+      //       cache: false
+      //    }
+      // }),
       gojsHackPlugin(),
       // 支持实时类型检查并将错误呈现在页面中
       checkerPlugin({
