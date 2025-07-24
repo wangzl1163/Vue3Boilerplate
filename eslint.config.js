@@ -1,6 +1,8 @@
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptParser from '@typescript-eslint/parser';
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 import globals from "globals";
-import parser from "vue-eslint-parser";
+import vueParser from "vue-eslint-parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
@@ -16,14 +18,11 @@ const compat = new FlatCompat({
 });
 
 export default [
-   ...compat.extends(
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
-   ),
+   ...compat.extends(),
+   eslintConfigPrettier,
    {
       plugins: {
-         "@typescript-eslint": typescriptEslint
+         "@typescript-eslint": typescriptEslintPlugin
       },
 
       languageOptions: {
@@ -34,12 +33,12 @@ export default [
             defineEmits: "writable"
          },
 
-         parser: parser,
+         parser: vueParser,
          ecmaVersion: "latest",
          sourceType: "module",
 
          parserOptions: {
-            parser: "@typescript-eslint/parser",
+            parser: typescriptParser,
             ecmaFeatures: {
                jsx: true
             }
