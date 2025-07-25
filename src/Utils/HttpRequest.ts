@@ -8,23 +8,10 @@ import type { AxiosRequestConfig } from "axios";
 let hideError = false;
 
 // 创建实例
-const http = ba.create(
-   {
-      401: {
-         msg: "验证失败"
-      },
-      404: {
-         msg: "未找到对应内容"
-      },
-      500: {
-         msg: "服务器发生错误，请稍后再试"
-      }
-   },
-   {
-      baseURL: import.meta.env.VITE_BASE_API, // api的base_url
-      timeout: 60000 * 3 // 请求超时时间
-   }
-);
+const http = ba.create(null, {
+   baseURL: import.meta.env.VITE_BASE_API, // api的base_url
+   timeout: 60000 * 3 // 请求超时时间
+});
 
 // 请求拦截器
 http.interceptors.request.use(
