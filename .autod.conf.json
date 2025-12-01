@@ -26,7 +26,6 @@
    "devdep": [
       "@commitlint/cli",
       "@commitlint/config-conventional",
-      "@nabla/vite-plugin-eslint",
       "@types/crypto-js",
       "@types/file-saver",
       "@typescript-eslint/eslint-plugin",
@@ -44,7 +43,6 @@
       "prettier-plugin-tailwindcss",
       "sharp",
       "svgo",
-      "tailwindcss",
       "typescript",
       "unplugin-auto-import",
       "vite",
@@ -56,7 +54,7 @@
       "vite-plugin-vue-setup-extend",
       "vue-eslint-parser"
    ],
-   "keep": ["jsencrypt"],
+   "keep": ["jsencrypt", "tailwindcss"],
    "exclude": [
       "node_modules",
       "./test/fixtures",
