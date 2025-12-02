@@ -52,7 +52,7 @@
       "autod": "^3.1.2",
       "autoprefixer": "^10.4.22",
       "cross-env": "^7.0.3",
-      "eslint": "^9.31.0",
+      "eslint": "^9.39.1",
       "eslint-config-prettier": "^10.1.8",
       "globals": "^16.3.0",
       "husky": "^9.1.7",
